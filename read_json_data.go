@@ -6,9 +6,9 @@ import (
 )
 
 type IpRange struct {
-	Begin string
-	End	  string
-	Name  string
+	Begin string `json: "begin"`
+	End	  string `json: "end"`
+	Name  string `json: "source"`
 }
 
 func ReadDataFromJson(filepath string) []*IpRange {
