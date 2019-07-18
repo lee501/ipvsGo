@@ -6,19 +6,21 @@ import (
 )
 
 type IpRange struct {
-	Begin string `json: "begin"`
+	Start string `json: "start"`
 	End	  string `json: "end"`
-	Name  string `json: "source"`
+	Source  string `json: "source"`
 }
 
 func ReadDataFromJson(filepath string) []*IpRange {
 	var r []*IpRange
 	data, err := ioutil.ReadFile(filepath)
 	if err != nil {
+		println("文件读取错误", err)
 		return nil
 	}
-	err = json.Unmarshal(data, r)
+	err = json.Unmarshal(data, &r)
 	if err != nil {
+		println("数据解析错误", err)
 		return nil
 	}
 	return r

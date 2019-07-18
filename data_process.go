@@ -22,9 +22,9 @@ type IpRanger struct {
 func IpStringToUint(ips []*IpRange){
 	for _, ipv := range ips {
 		r := new(IpRanger)
-		r.Begin = IPString2Long(ipv.Begin)
+		r.Begin = IPString2Long(ipv.Start)
 		r.End = IPString2Long(ipv.End)
-		r.Name = ipv.Name
+		r.Name = ipv.Source
 		Ranger = append(Ranger, r)
 	}
 	sort.Stable(Ranger)
