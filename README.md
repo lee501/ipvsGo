@@ -3,7 +3,7 @@
 运营商数据截止到2019.7.18
 #example
 ```
-  go get https://github.com/sevenelevenlee/ipvsGo.git
+  go get github.com/sevenelevenlee/ipvsGo
   
   ip := "218.244.0.0"
   #将ip转换成uint类型
